@@ -9,25 +9,16 @@
 import MrCoxallStack from './MrCoxallStack'
 import promptSync from 'prompt-sync'
 
-// use MrCoxallStack and promptSync classes
-const prompt = promptSync()
+// process and output
 const myStack = new MrCoxallStack()
 
-// Input & Process
-const input1 = Number(prompt('Enter a first number: '))
-myStack.pushItem(input1)
-
-const input2 = Number(prompt('Enter a second number: '))
-myStack.pushItem(input2)
-
-const input3 = Number(prompt('Enter a third number: '))
-myStack.pushItem(input3)
-
-// Output
+const prompt = promptSync()
+const userStr = prompt('Enter an integer: ')
+const str = parseInt(userStr)
+myStack.push(str)
+console.log('Stack before the pop is: ')
 console.log(myStack.getStack())
 
-console.log(`\nPopped number: ${String(myStack.popItem())}`)
-
+myStack.pop()
+console.log('Stack after pop is: ')
 console.log(myStack.getStack())
-
-console.log('\nDone.')
